@@ -6,7 +6,7 @@ nmcli device status
 echo ""
 
 echo "Open ports:"
-sudo lsof -i -P -n | grep LISTEN
+cat etc/services
 echo ""
 
 echo "Firewalld Status:"
