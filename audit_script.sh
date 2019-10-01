@@ -1,7 +1,7 @@
 #!/bin/bash
 #Sec Script Ver. 9/28/2019
 
-host=$(ip addr | grep 'inet 10' | cut -f 6 -d ' ')
+host=$(ip addr | grep 'inet 10' | cut -f 6 -d ' ' | cut -f 0 -d '/')
 time=$(date +"%Y.%m.%d-%H:%M")
 echo "$host status report: $time" > /tmp/$host-$time.log
 echo -e "\nNetwork Status:\n" >> /tmp/$host-$time.log
