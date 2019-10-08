@@ -6,13 +6,13 @@ time=$(date +"%Y.%m.%d-%H:%M")
 path='/tmp'
 $(mkdir $path/$host)
 path="$path/$host"
-echo "$host status report: $time" > $path/$time.log
-echo -e "\nNetwork Status:\n" >> $path/$time.log
-nmcli device status >> $path/$time.log
+echo "$host status report: $time" > "$path/$time.log"
+echo -e "\nNetwork Status:\n" >> "$path/$time.log"
+nmcli device status >> "$path/$time.log"
 
-echo -e "\n\nOpen ports:\n" >> $path/$time.log
-ss -lntu | grep LISTEN >> $path/$time.log
+echo -e "\n\nOpen ports:\n" >> "$path/$time.log"
+ss -lntu | grep LISTEN >> "$path/$time.log"
 
-echo -e "\n\nFirewalld Status:\n" >> $path/$time.log
-systemctl status firewalld >> $path/$time.log
+echo -e "\n\nFirewalld Status:\n" >> "$path/$time.log"
+systemctl status firewalld >> "$path/$time.log"
 
